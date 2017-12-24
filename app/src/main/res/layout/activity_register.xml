@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.umar.retrofitdemo.Register">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:id="@+id/tvRegisterLabel"
+        android:text="Lost and Found"
+        android:gravity="center"
+        android:textSize="40sp"/>
+    <EditText
+        android:layout_marginTop="80sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:hint="Enter name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etEmail"
+        android:hint="Enter email"
+        android:layout_below="@+id/etName"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPassword"
+        android:hint="Enter password"
+        android:layout_below="@+id/etEmail"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etRegNo"
+        android:hint="Enter registration number"
+        android:layout_below="@id/etPassword"
+       />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDept"
+        android:hint="Enter your depatment name"
+        android:layout_below="@+id/etRegNo"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPhone"
+        android:hint="Enter Phone number"
+        android:layout_below="@+id/etDept"/>
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancel"
+        android:text="Cancel"
+        android:layout_below="@+id/btnReg"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:id="@+id/btnReg"
+        android:text="Register"
+        android:layout_below="@+id/etPhone"/>
+
+</RelativeLayout>

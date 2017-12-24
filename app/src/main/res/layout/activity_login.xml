@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.umar.retrofitdemo.Login">
+
+    tools:context="com.example.umar.madappfall17.Login">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:id="@+id/tvLabel"
+        android:text="Lost and Found"
+        android:gravity="center"
+        android:textSize="40sp"/>
+    <EditText
+        android:layout_marginTop="150sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etUserName"
+        android:hint="Enter user name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="30sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPassword"
+        android:hint="Enter password"
+        android:layout_below="@+id/etUserName"/>
+
+    <Button
+        android:id="@+id/btnReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+
+        android:layout_marginTop="28dp"
+        android:text="Register" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginTop="30sp"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentEnd="true"
+
+        android:text="LogIn" />
+</RelativeLayout>
