@@ -52,6 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView id, email, password, reg_id, owner_name, owner_department, owner_mobile;
 
+
         public MyViewHolder(View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.oid);

@@ -17,4 +17,11 @@ public interface ApiInterface {
     Call<List<Owner>> getOwner();
     @POST("owner")
     Call<Owner> createOwner(@Body Owner owner);
+
+    @GET("lost")
+    Call<List<LostThings>> getLostThings();
+    @POST("lost")
+    Call<LostThings> createLostThings(@Body LostThings lostThings);
+
+
 }

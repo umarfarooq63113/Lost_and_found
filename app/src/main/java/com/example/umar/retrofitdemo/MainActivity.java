@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             // Creating post
-
+       // final String BASE_URL = "http://192.168.10.3/app/public/api/";
 
 
 
