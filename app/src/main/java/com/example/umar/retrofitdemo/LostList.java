@@ -1,4 +1,5 @@
 package com.example.umar.retrofitdemo;
+
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,26 +23,29 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class LostList extends AppCompatActivity {
-    Button btnSubmit,btnCancel;
+    Button btnSubmit, btnCancel;
     FloatingActionButton add;
     private RecyclerView recyclerView;
     private LostRecyclerAdapter adapter;
-    ArrayList<LostThings> own;
+    List<LostThings> own=new ArrayList<LostThings>();
     private ApiInterface apiInterface;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost);
-add=findViewById(R.id.floatingActionButton);
-add.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        startActivity(new Intent(LostList.this,LostPost.class));
-    }
-});
+
+
+        add = findViewById(R.id.floatingActionButton);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LostList.this, LostPost.class));
+            }
+        });
         recyclerView = findViewById(R.id.lostRecyclerView);
         Log.d("MTAG", "onCreate: ");
-        own = new ArrayList<>();
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
@@ -71,7 +77,7 @@ add.setOnClickListener(new View.OnClickListener() {
 
         apiInterface = retrofit.create(ApiInterface.class);
         Call<List<LostThings>> cal = apiInterface.getLostThings();
-        ApiInterface apiInterface= retrofit.create(ApiInterface.class);
+        ApiInterface apiInterface = retrofit.create(ApiInterface.class);
         cal.enqueue(new Callback<List<LostThings>>() {
             @Override
             public void onResponse(Call<List<LostThings>> call, Response<List<LostThings>> response) {
@@ -81,7 +87,8 @@ add.setOnClickListener(new View.OnClickListener() {
                         own.add(x);
                     }
                     //Log.d("MTAG", "onResponse: is successfully" + response.body().get(0).getOwner_name());
-                    adapter = new LostRecyclerAdapter(own);
+                    //adapter = new LostRecyclerAdapter(own,this);
+                    adapter = new LostRecyclerAdapter(own,LostList.this);
                     recyclerView.setAdapter(adapter);
                 }
 
@@ -100,8 +107,6 @@ add.setOnClickListener(new View.OnClickListener() {
             }
 
         });
-
-
 
 
     }

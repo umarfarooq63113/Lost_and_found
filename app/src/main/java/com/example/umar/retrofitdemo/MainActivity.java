@@ -2,6 +2,13 @@ package com.example.umar.retrofitdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -9,25 +16,25 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    /*private static final String MTAG = "UOL";
+    private static final String MTAG = "UOL";
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
     private ApiInterface apiInterface;
-    ArrayList<Owner> own;*/
+    ArrayList<Owner> own;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         Log.d("MTAG", "onCreate: ");
         own = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);*/
+        recyclerView.setHasFixedSize(true);
 
 
             // Creating post
-       // final String BASE_URL = "http://192.168.10.3/app/public/api/";
+        final String BASE_URL = "http://192.168.10.3/app/public/api/";
 
 
 
@@ -37,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-         /*retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -64,6 +71,6 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<List<Owner>> call, Throwable t) {
                 Log.d("MTAG", "onResponse: is Fail" + t.getLocalizedMessage());
             }
-        });*/
+        });
     }
 }
